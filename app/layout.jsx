@@ -12,18 +12,11 @@ const departureMono = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL(
+    "https://re-reversed-ui-2-x-git-main-csiabils-projects.vercel.app/"
+  ),
   title: "Re-Reversed-UI 2X",
   description: "dadadada its da rererereversed ui",
-  openGraph: {
-    images: [
-      {
-        url: '/Og.png',
-        width: 1200,
-        height: 630,
-        alt: 'Image that says RE-REVERSED UI 2X',
-      },
-    ],
-  },
 };
 
 export default function RootLayout({children}) {
