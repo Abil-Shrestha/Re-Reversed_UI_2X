@@ -7,7 +7,6 @@ import Timeline from "@/app/components/timeline";
 import AnimatedCardStack from "./components/animated-dashboard";
 import SectionContainer from "./components/section-container";
 
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-neutral-900  flex items-center flex-col justify-center gap-20 p-28">
@@ -17,19 +16,21 @@ export default function Home() {
       <SectionContainer
         className="text-white shadow-sauceDark bg-neutral-900"
         title="Orbit thing"
-        link="https://github.com/sauce-dev/orbit"
+        link="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/orbit.jsx"
       >
         <Orbit />
       </SectionContainer>
       <SectionContainer
         className="bg-white shadow-sauceLight text-black"
         title="Cloud Tuah"
+        link="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/sync.js"
       >
         <SyncingComponent actionText="Sync Tuah" />
       </SectionContainer>
       <SectionContainer
         className="bg-white shadow-sauceLight text-black"
         title="Laptop Thing"
+        link="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/animated-laptop.jsx"
       >
         <AnimatedLaptop />
       </SectionContainer>
@@ -46,7 +47,7 @@ export default function Home() {
       <SectionContainer
         title="Animated linechart"
         className=" bg-white shadow-sauceLight"
-        link="https://github.com/sauce-dev/animated-graph"
+        link="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/animated-graph.jsx"
       >
         <AnimatedGraph />
       </SectionContainer>

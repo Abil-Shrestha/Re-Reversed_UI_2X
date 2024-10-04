@@ -23,42 +23,49 @@ const AnimatedCard = ({index, icon: Icon, count, title}) => {
           const nextZ = 20 * nextIndex;
 
           if (nextIndex === 0) {
+            // Move the front card back
             await controls.start({
               y: [currentY, 24 * count],
               z: [currentZ, 20 * count],
               opacity: [1, 0],
               scale: [1, 0.95],
-              zIndex: currentIndex + 1,
+              zIndex: count,
               transition: {
-                duration: 0.4,
+                duration: 0.6,
                 ease: [0.645, 0.045, 0.355, 1],
               },
             });
+
+            // Reset position for the next cycle
             controls.set({
-              y: nextY,
-              z: nextZ,
+              y: 0,
+              z: 0,
               opacity: 0,
               scale: 0.95,
-              zIndex: nextIndex,
+              zIndex: 0,
             });
+
+            // Bring the card back to view
             await controls.start({
               opacity: 1,
               scale: 1,
-              transition: {duration: 0.2, ease: "easeOut"},
+              transition: {duration: 0.4, ease: "easeOut"},
             });
           } else {
+            // Move other cards forward
             await controls.start({
               y: [currentY, nextY],
               z: [currentZ, nextZ],
-              zIndex: nextIndex,
+              zIndex: nextIndex + 1,
               transition: {
-                duration: 1,
+                duration: 0.6,
                 ease: [0.645, 0.045, 0.355, 1],
               },
             });
           }
 
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          // Pause between animations
+          await new Promise((resolve) => setTimeout(resolve, 1500));
         }
       }
     };
@@ -79,6 +86,7 @@ const AnimatedCard = ({index, icon: Icon, count, title}) => {
         z: 20 * index,
         opacity: 1,
         scale: 1,
+        zIndex: index + 1,
       }}
       style={{
         position: "absolute",
@@ -169,7 +177,7 @@ export default function AnimatedCardStack() {
         ))}
       </div>
       <a
-        href="https://github.com/sauce-dev/orbit"
+        href="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/animated-dashboard.jsx"
         target="_blank"
         rel="noopener noreferrer"
         className="flex justify-center pt-4 items-center"
