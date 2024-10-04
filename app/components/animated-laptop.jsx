@@ -22,13 +22,13 @@ export default function AnimatedLaptop() {
   };
 
   return (
-    <div className="pt-44 relative w-[25rem] h-[15rem]">
+    <div className="pt-44 relative md:w-[25rem] md:h-[15rem]">
       <button
         onClick={handleReplay}
         className="absolute top-0 right-0 p-[0.5] rounded-full transition-colors hover:scale-110"
         aria-label="Replay animation"
       >
-        <LoopIcon  />
+        <LoopIcon />
       </button>
       <div className="relative">
         <div className="flex justify-center flex-col items-center relative">
@@ -85,12 +85,12 @@ export default function AnimatedLaptop() {
             <div className="w-[22px] h-[3px] absolute top-0 left-1/2 -translate-x-1/2 bg-[#cdcdcd] rounded-b-full shadow-[inset_2px_0_1px_-2px_rgba(0,0,0,.5),inset_-2px_0_1px_-2px_rgba(0,0,0,.5),0_1px_0_hsla(0,0%,100%,.1)]" />
           </div>
         </div>
-        <div className="absolute -top-24 w-full left-0 flex justify-center gap-6 z-10">
+        <div className="absolute -top-20 w-full left-0 flex justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 z-10">
           {[
-            <LaptopIcon key="laptop" />,
-            <CodeIcon key="code" />,
-            <TerminalIcon key="terminal" />,
-            <GitBranchIcon key="git" />,
+            <LaptopIcon key="laptop" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />,
+            <CodeIcon key="code" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />,
+            <TerminalIcon key="terminal" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />,
+            <GitBranchIcon key="git" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />,
           ].map((icon, index) => (
             <motion.div
               key={`icon-${index}-${key}`}
@@ -105,7 +105,7 @@ export default function AnimatedLaptop() {
                 duration: 1,
                 ease: easeInOutCubic,
               }}
-              className="rounded-[14px] w-[66px] h-[66px] bg-white shadow-[0_0_0_1px_rgb(231_231_231),0_1px_2px_rgb(231_231_231_/_32%),0_3px_3px_rgb(231_231_231_/_24%),0_-2px_rgb(231_231_231_/_70%)_inset] flex items-center justify-center"
+              className="rounded-[14px] w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[58px] md:h-[58px] lg:w-[66px] lg:h-[66px] bg-white shadow-[0_0_0_1px_rgb(231_231_231),0_1px_2px_rgb(231_231_231_/_32%),0_3px_3px_rgb(231_231_231_/_24%),0_-2px_rgb(231_231_231_/_70%)_inset] flex items-center justify-center"
             >
               {icon}
             </motion.div>

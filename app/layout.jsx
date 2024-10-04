@@ -15,9 +15,29 @@ const departureMono = localFont({
 export const metadata = {
   metadataBase: new URL("https://re-reversed-ui-2-x.vercel.app"),
   title: "Re-Reversed-UI 2X",
-  description: "dadadada its da rererereversed ui",
+  description: "Reverse engineered the reverse UI",
+  openGraph: {
+    title: "Re-Reversed-UI 2X",
+    description: "Reverse engineered the reverse UI",
+    url: "https://re-reversed-ui-2-x.vercel.app",
+    siteName: "Re-Reversed-UI 2X",
+    images: [
+      {
+        url: "https://re-reversed-ui-2-x.vercel.app/opengraph-image.png", // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Re-Reversed-UI 2X",
+    description: "dadadada its da rererereversed ui",
+    images: ["https://re-reversed-ui-2-x.vercel.app/twitter-image.png"], // Replace with your actual OG image URL
+  },
 };
-
 export default function RootLayout({children}) {
   return (
     <html lang="en" suppressHydrationWarning>

@@ -1,26 +1,17 @@
 "use client";
+
 import {Box} from "@mui/material";
 import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
-
-const spin = `
-@keyframes spin {
-  from {
-    transform: translateZ(0) rotate(0turn)
-  }
-  to {
-    transform: translateZ(0) rotate(1turn)
-  }
-}`;
 
 const easeOutExpo = (t) => {
   return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 };
 
-const CircleIcon = () => (
+const CircleIcon = ({size = 10}) => (
   <svg
-    width="10"
-    height="10"
+    width={size}
+    height={size}
     viewBox="0 0 10 10"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -46,10 +37,10 @@ const CircleIcon = () => (
   </svg>
 );
 
-const CloudIcon = () => (
+const CloudIcon = ({size = 28}) => (
   <svg
-    width="28"
-    height="28"
+    width={size}
+    height={size}
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -67,27 +58,36 @@ const CloudIcon = () => (
 );
 
 const AnimatedSVG = () => (
-  <svg
-    width="364"
-    height="1"
-    viewBox="0 0 364 162"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+  <Box
+    sx={{
+      width: "100%",
+      maxWidth: {xs: "280px", sm: "320px", md: "364px"},
+      margin: "0 auto",
+    }}
   >
-    <defs>
-      <linearGradient
-        id="paint0_linear_0_947"
-        x1="182"
-        y1="1.37415"
-        x2="182"
-        y2="161.205"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="hsl(141 43.7% 86%)" />
-        <stop offset="1" stopColor="hsl(141 43.7% 86%)" stopOpacity="0" />
-      </linearGradient>
-    </defs>
-  </svg>
+    <svg
+      width="100%"
+      height="1"
+      viewBox="0 0 364 1"
+      fill="none"
+      preserveAspectRatio="xMidYMid meet"
+      className="w-full"
+    >
+      <defs>
+        <linearGradient
+          id="paint0_linear_0_947"
+          x1="182"
+          y1="1.37415"
+          x2="182"
+          y2="161.205"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="hsl(141 43.7% 86%)" />
+          <stop offset="1" stopColor="hsl(141 43.7% 86%)" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </Box>
 );
 
 export default function SyncingComponent({actionText = "Syncing"}) {
@@ -100,7 +100,7 @@ export default function SyncingComponent({actionText = "Syncing"}) {
   if (!mounted) return null;
 
   return (
-    <Box sx={{py: "80px", px: "60px"}}>
+    <Box sx={{py: {xs: "40px", sm: "60px", md: "80px"}, px: "0px"}}>
       <Box
         sx={{
           display: "flex",
@@ -114,7 +114,7 @@ export default function SyncingComponent({actionText = "Syncing"}) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            gap: "24px",
+            gap: {xs: "12px", sm: "18px", md: "24px"},
             width: "100%",
           }}
         >
@@ -126,8 +126,8 @@ export default function SyncingComponent({actionText = "Syncing"}) {
           >
             <Box
               sx={{
-                width: 46,
-                height: 46,
+                width: {xs: 36, sm: 40, md: 46},
+                height: {xs: 36, sm: 40, md: 46},
                 borderRadius: "8px",
                 display: "flex",
                 alignItems: "center",
@@ -139,7 +139,7 @@ export default function SyncingComponent({actionText = "Syncing"}) {
                   "rgba(29, 29, 32, 0.04) 0px 0px 0px 1px, rgba(99, 102, 241, 0.1) 0px 0px 0px 5px, 0 1px 3px 0 rgba(79,70,229,.25), 0 1px 2px -1px rgba(79,70,229,.25)",
               }}
             >
-              <CloudIcon />
+              <CloudIcon size={28} />
             </Box>
             {Array.from({length: 4}).map((_, index) => (
               <motion.div
@@ -198,7 +198,7 @@ export default function SyncingComponent({actionText = "Syncing"}) {
                 sx={{
                   mask: "linear-gradient(90deg,transparent,#000)",
                   paddingRight: "12px",
-                  width: "33.3333%",
+                  width: {xs: "25%", sm: "30%", md: "33.3333%"},
                   height: "100%",
                   display: "flex",
                   alignItems: "center",
@@ -241,14 +241,14 @@ export default function SyncingComponent({actionText = "Syncing"}) {
                   "rgba(29, 29, 32, 0.08) 0px 0px 0px 1px, 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)",
                 color: "#1d1d20",
                 fontWeight: 500,
-                fontSize: 14,
-                padding: "4px 12px",
+                fontSize: {xs: 12, sm: 13, md: 14},
+                padding: {xs: "3px 10px", sm: "3px 11px", md: "4px 12px"},
                 background: "#fff",
                 borderRadius: "9999px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "6px",
+                gap: {xs: "4px", sm: "5px", md: "6px"},
               }}
             >
               {actionText}
@@ -262,7 +262,7 @@ export default function SyncingComponent({actionText = "Syncing"}) {
                   display: "flex",
                 }}
               >
-                <CircleIcon />
+                <CircleIcon size={8} />
               </motion.div>
             </Box>
           </motion.div>

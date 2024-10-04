@@ -19,7 +19,7 @@ export default function SectionContainer({title, link, className, children}) {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex justify-center pt-8"
+        className="flex w-fit justify-center pt-8"
       >
         <span className="mr-1">Code</span>
         <ArrowUpRight

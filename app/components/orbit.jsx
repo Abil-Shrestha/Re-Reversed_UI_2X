@@ -1,6 +1,7 @@
 "use client";
 import Box from "@mui/material/Box";
 import {keyframes, styled} from "@mui/system";
+import Image from "next/image";
 import {
   DiscordIcon,
   HubspotIcon,
@@ -176,8 +177,13 @@ const Orbit = () => {
           },
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="center-logo" src="/logo.png" alt="Logo" />
+        <Image
+          className="center-logo"
+          src="/logo.png"
+          alt="Logo"
+          width={64}
+          height={64}
+        />
       </Box>
     </OrbitRoot>
   );
