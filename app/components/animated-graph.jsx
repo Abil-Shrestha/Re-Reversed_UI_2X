@@ -1,6 +1,6 @@
 "use client";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const customEase = [0.25, 0.1, 0.25, 1];
 

@@ -46,7 +46,7 @@ export default function Home() {
       </SectionContainer>
       <SectionContainer
         title="Animated linechart"
-        className=" bg-white shadow-sauceLight"
+        className=" bg-white shadow-sauceLight text-black"
         link="https://github.com/Abil-Shrestha/Re-Reversed_UI_2X/blob/main/app/components/animated-graph.jsx"
       >
         <AnimatedGraph />
