@@ -9,9 +9,9 @@ import SectionContainer from "./components/section-container";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-neutral-900  flex items-center flex-col justify-center gap-20 p-28">
-      <h1 className="text-6xl font-sans text-white tracking-tight">
-        Re - Reversed UI - 2x
+    <div className="min-h-screen bg-neutral-900  flex items-center flex-col justify-center gap-20 px-2 md:p-28">
+      <h1 className="text-6xl font-sans text-white tracking-tight p-8">
+        Re-Reversed UI - 2X
       </h1>
       <SectionContainer
         className="text-white shadow-sauceDark bg-neutral-900"
