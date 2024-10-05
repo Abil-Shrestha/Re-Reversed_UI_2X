@@ -6,7 +6,7 @@ const customEase = [0.25, 0.1, 0.25, 1];
 
 export default function AnimatedGraph() {
   return (
-    <div className="flex items-center justify-center p-20 aspect-[364/162]">
+    <div className="flex items-center justify-center">
       <svg
         width="364"
         height="162"
@@ -19,12 +19,12 @@ export default function AnimatedGraph() {
         <defs>
           <clipPath id="clip">
             <motion.rect
-              x="0"
+              x="60"
               y="0"
               width="364"
               height="162"
               initial={{width: 0}}
-              animate={{width: 364}}
+              animate={{width: 240}}
               transition={{
                 duration: 8,
                 ease: customEase,

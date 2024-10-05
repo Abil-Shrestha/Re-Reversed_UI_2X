@@ -34,6 +34,7 @@ const OrbitRoot = styled(Box)({
   position: "relative",
   height: 328,
   width: 328,
+  overflow: "hidden",
 });
 
 const GradientsContainer = styled(Box)({
