@@ -1,9 +1,9 @@
 "use client";
 
-import {ArrowUpRight} from "@/app/components/icons";
-import {motion, useAnimation} from "framer-motion";
-import {useEffect, useRef} from "react";
-import {LinkedInIcon, NotionIcon, XIcon} from "./icons";
+import { ArrowUpRight } from "@/app/components/icons";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { LinkedInIcon, NotionIcon, XIcon } from "./icons";
 
 const AnimatedCard = ({index, icon: Icon, count, title}) => {
   const controls = useAnimation();
@@ -164,7 +164,7 @@ const cardData = [
 export default function AnimatedCardStack() {
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center p-4 rounded-md">
-      <p className="pb-4 font-semibold text-xl"> Animated Card Stack</p>
+      <p className="pb-4 font-semibold text-xl text-black"> Animated Card Stack</p>
       <div className="w-full max-w-md aspect-[3/4] relative h-[32rem]">
         {cardData.map((card, index) => (
           <AnimatedCard
@@ -182,7 +182,7 @@ export default function AnimatedCardStack() {
         rel="noopener noreferrer"
         className="flex justify-center pt-4 items-center"
       >
-        <span className="mr-1">Code</span>
+        <span className="mr-1 text-black">Code</span>
         <ArrowUpRight />
       </a>
     </div>
